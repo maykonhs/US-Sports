@@ -1,0 +1,1 @@
+Fundada em <?php print date("Y"); ?>
