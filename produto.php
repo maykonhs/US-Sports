@@ -13,13 +13,20 @@
 </head>
 
 <body>
+
+	<?php
+		$conexao = mysqli_connect("127.0.0.1", "root", "abc123", "ussportsbd");
+		$dados = mysqli_query($conexao, "SELECT * FROM produtos WHERE id = $_GET[id]");
+		$produto = mysqli_fetch_array($dados);
+	?>
+	
 	<?php include("cabecalho.php"); ?>
 
 	<div class="container">
 
 		<div class="produto">
-			<h1>Camisa Tom Brady</h1>
-			<p>por apenas R$299,00</p>
+			<h1><?= $produto["nome"] ?></h1>
+			<p>por apenas R$<?= $produto["preco"] ?></p>
 
 			<form action="checkout.php" method="POST">
 				<fieldset class="cores">
@@ -49,7 +56,7 @@
 
 		<div class="detalhes">
 			<h2>Detalhes do produto</h2>
-			<p>Camisa oficial de Tom Brady, QB do New England Patriots. Temos os uniformes 1 e 2, nas cores branco e azul respectivamente. Adquira já esse produto exclusivo e receba-o em até 5 dias úteis.</p>
+			<p><?= $produto["descricao"] ?></p>
 
 			<table>
 				<thead>
