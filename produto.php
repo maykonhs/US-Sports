@@ -1,8 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
+	<?php
+		$conexao = mysqli_connect("127.0.0.1", "root", "abc123", "ussportsbd");
+		$dados = mysqli_query($conexao, "SELECT * FROM produtos WHERE id = $_GET[id]");
+		$produto = mysqli_fetch_array($dados);
+	?>
+
 <head>
-	<title>US Sports</title>
+	<title><?= $produto["nome"] ?></title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
 
@@ -13,12 +19,6 @@
 </head>
 
 <body>
-
-	<?php
-		$conexao = mysqli_connect("127.0.0.1", "root", "abc123", "ussportsbd");
-		$dados = mysqli_query($conexao, "SELECT * FROM produtos WHERE id = $_GET[id]");
-		$produto = mysqli_fetch_array($dados);
-	?>
 	
 	<?php include("cabecalho.php"); ?>
 
@@ -34,12 +34,12 @@
 
 					<input type="radio" name="cor" value="azul" id="azul" checked>
 					<label for="azul">
-						<img src="img\produtos-original\miniatura7.jpg" alt="azul">
+						<img src="img\produtos-original\miniatura<?= $produto["id"] ?>.jpg" alt="azul">
 					</label>
 
 					<input type="radio" name="cor" value="branca" id="branca" checked>
 					<label for="branca">
-						<img src="img\produtos-original\miniatura7-branca.jpg" alt="branca">
+						<img src="img\produtos-original\miniatura<?= $produto["id"] ?>-branca.jpg" alt="branca">
 					</label>
 				</fieldset>
 
