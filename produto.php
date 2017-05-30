@@ -39,7 +39,7 @@
 
 					<input type="radio" name="cor" value="branca" id="branca" checked>
 					<label for="branca">
-						<img src="img\produtos-original\miniatura<?= $produto["id"] ?>-branca.jpg" alt="branca">
+						<img src="img\produtos-original\miniatura<?= $produto["id"] ?>-alternativo.jpg" alt="alternativo">
 					</label>
 				</fieldset>
 

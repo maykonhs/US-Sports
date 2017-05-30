@@ -48,59 +48,23 @@
 		<section class="painel novidades">
 			<h2>Novidades</h2>
 			<ol>
+				<?php
+					$conexao = mysqli_connect("127.0.0.1", "root", "abc123", "ussportsbd");
+					$dados = mysqli_query($conexao, "select * from produtos LIMIT 3, 6");
+
+					while ($produto = mysqli_fetch_array($dados)):
+				?>
+
 				<li>
-					<a href="produto.php">
+					<a href="produto.php?id=<?= $produto["id"] ?>">
 						<figure>
-							<img src="img/produtos/miniatura4.jpg">
-							<figcaption>OKC Westbrook - R$179,00</figcaption>
+							<img src="img/produtos/miniatura<?= $produto["id"] ?>.jpg" alt="<?= $produto["nome"] ?>">
+							<figcaption><?= $produto["nome"] ?> por <?= $produto["preco"] ?></figcaption>
 						</figure>
 					</a>
 				</li>
 
-				<li>
-					<a href="produto.php">
-						<figure>
-							<img src="img/produtos/miniatura12.jpg">
-							<figcaption>Cardinals Fitzgerald - R$219,00</figcaption>
-						</figure>
-					</a>
-				</li>
-
-				<li>
-					<a href="produto.php">
-						<figure>
-							<img src="img/produtos/miniatura3.jpg">
-							<figcaption>Spurs Kawhi Leonard - R$189,00</figcaption>
-						</figure>
-					</a>
-				</li>
-
-				<li>
-					<a href="produto.php">
-						<figure>
-							<img src="img/produtos/miniatura10.jpg">
-							<figcaption>Steelers Big Ben - R$239,00</figcaption>
-						</figure>
-					</a>
-				</li>
-
-				<li>
-					<a href="produto.php">
-						<figure>
-							<img src="img/produtos/miniatura6.jpg">
-							<figcaption>Celtics Isaiah Thomas - R$179,00</figcaption>
-						</figure>
-					</a>
-				</li>
-
-				<li>
-					<a href="produto.php">
-						<figure>
-							<img src="img/produtos/miniatura11.jpg">
-							<figcaption>Panthers Cam Newton - R$249,00</figcaption>
-						</figure>
-					</a>
-				</li>
+			<?php endwhile; ?>
 			</ol>
 		</section>
 
