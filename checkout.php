@@ -8,6 +8,25 @@
 </head>
 <body>
 
+	<style>
+		.navbar {
+			margin: 0;
+		}
+	</style>
+
+	<nav class="navbar navbar-inverse navbar-static-top">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="index.php">US Sports</a>
+			<button class="navbar-toggle" type="button" data-target=".navbar-collapse" data-toggle="collapse">menu</button>
+		</div>
+		<ul class="nav navbar-nav collapse navbar-collapse">
+			<li><a href="sobre.php">Sobre</a></li>
+			<li><a href="#">Ajuda</a></li>
+			<li><a href="#">FAQ</a></li>
+			<li><a href="#">Contato</a></li>
+		</ul>
+	</nav>
+
 	<div class="jumbotron">
 		<div class="container">
 			<h1>Ótima escolha!</h1>
@@ -16,6 +35,8 @@
 	</div>
 
 	<div class="container">
+		<div class="row">
+			<div class="col-sm-4">
 		<div class="panel panel-default">
 			<div class="panel-heading">
 				<h2 class="panel-title">Sua compra</h2>
@@ -35,9 +56,11 @@
 				</dl>
 			</div>
 		</div>
+		</div>
 
-		<form>
-			<fieldset>
+		<form class="col-sm-8">
+			<div class="row">
+			<fieldset class="col-md-6">
 				<legend>Dados pessoais</legend>
 				
 				<div class="form-group">
@@ -64,7 +87,7 @@
 
 			</fieldset>
 
-			<fieldset>
+			<fieldset class="col-md-6">
 				<legend>Cartão de crédito</legend>
 
 				<div class="form-group">
@@ -86,13 +109,18 @@
 					<input type="month" class="form-control" id="validade-cartao" name="validade-cartao">
 				</div>
 			</fieldset>
+			</div>
 
 			<button type="submit" class="btn btn-primary btn-lg pull-right">
 				<span class="glyphicon glyphicon-thumbs-up"></span>
 				Confirmar pedido
 			</button>
 		</form>
+
+		</div>
 	</div>
+	<script src="js/jquery.js"></script>
+	<script src="js/bootstrap.js"></script>
 
 </body>
 </html>
