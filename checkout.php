@@ -92,7 +92,7 @@
 
 				<div class="form-group">
 					<label for="numero-cartao">Número - CVV</label>
-					<input type="text" class="form-control" id="numero-cartao" name="numero-cartao">
+					<input type="text" class="form-control" id="numero-cartao" name="numero-cartao"">
 				</div>
 
 				<div class="form-group">
@@ -121,6 +121,7 @@
 	</div>
 	<script src="js/jquery.js"></script>
 	<script src="js/bootstrap.js"></script>
+	<script src="js/inputmask.js"></script>
 
 </body>
 </html>

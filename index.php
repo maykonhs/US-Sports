@@ -50,7 +50,7 @@
 			<ol>
 				<?php
 					$conexao = mysqli_connect("127.0.0.1", "root", "abc123", "ussportsbd");
-					$dados = mysqli_query($conexao, "select * from produtos LIMIT 3, 6");
+					$dados = mysqli_query($conexao, "select * from produtos LIMIT 0, 12");
 
 					while ($produto = mysqli_fetch_array($dados)):
 				?>
@@ -66,70 +66,41 @@
 
 			<?php endwhile; ?>
 			</ol>
+
+			<button type="button">Mostrar mais</button>
+
 		</section>
 
 		<section class="painel mais-vendidos">
 			<h2>Mais Vendidos</h2>
 			<ol>
+				<?php
+					$conexao = mysqli_connect("127.0.0.1", "root", "abc123", "ussportsbd");
+					$dados = mysqli_query($conexao, "select * from produtos order by id DESC LIMIT 0, 12");
+
+					while ($produto = mysqli_fetch_array($dados)):
+				?>
+
 				<li>
-					<a href="produto.php">
+					<a href="produto.php?id=<?= $produto["id"] ?>">
 						<figure>
-							<img src="img/produtos/miniatura1.jpg">
-							<figcaption>Cavs Lebron James - R$199,00</figcaption>
+							<img src="img/produtos/miniatura<?= $produto["id"] ?>.jpg" alt="<?= $produto["nome"] ?>">
+							<figcaption><?= $produto["nome"] ?> por <?= $produto["preco"] ?></figcaption>
 						</figure>
 					</a>
 				</li>
 
-				<li>
-					<a href="produto.php">
-						<figure>
-							<img src="img/produtos/miniatura7.jpg">
-							<figcaption>Patriots Tom Brady- R$299,00</figcaption>
-						</figure>
-					</a>
-				</li>
-
-				<li>
-					<a href="produto.php">
-						<figure>
-							<img src="img/produtos/miniatura2.jpg">
-							<figcaption>Warriors Stephen Curry- R$199,00</figcaption>
-						</figure>
-					</a>
-				</li>
-
-				<li>
-					<a href="produto.php">
-						<figure>
-							<img src="img/produtos/miniatura8.jpg">
-							<figcaption>Saints Drew Brees- R$279,00</figcaption>
-						</figure>
-					</a>
-				</li>
-
-				<li>
-					<a href="produto.php">
-						<figure>
-							<img src="img/produtos/miniatura5.jpg">
-							<figcaption>Rockets James Harden - R$189,00</figcaption>
-						</figure>
-					</a>
-				</li>
-
-				<li>
-					<a href="produto.php">
-						<figure>
-							<img src="img/produtos/miniatura9.jpg">
-							<figcaption>Broncos Manning - R$289,00</figcaption>
-						</figure>
-					</a>
-				</li>
+			<?php endwhile; ?>
 			</ol>
+
+			<button type="button">Mostrar mais</button>
+
 		</section>
 	</div>
 
 	<?php include("rodape.php"); ?>
 
+	<script src="js/jquery.js"></script>
 	<script src="js/home.js"></script>
 </body>
 </html>

@@ -125,6 +125,54 @@ header {
 	box-shadow: 1px 1px 4px #999;
 }
 
+.painel button {
+	display: none;
+	float: right;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	padding: 10px;
+	background-color: #333;
+	border: 0;
+	border-radius: 4px;
+	box-shadow: 1px 1px 3px rgba(30,30,30,0.5);
+	color: white;
+	position: relative;
+	font-size: 1em;
+	text-decoration: none;
+	text-shadow: 1px 0 1px black;
+	transition: 0.3s;
+}
+
+.painel button:hover {
+	background-color: #393939;
+	box-shadow: 1px 0 20px rgba(200,200,120,0.9);
+}
+
+.painel button:after {
+	content: '';
+	display: block;
+	height: 0;
+	width: 0;
+
+	/*triangulo*/
+	border-top: 10px solid #333;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+
+	/*posicionamento*/
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	margin-left: -5px;
+
+	/*animação*/
+	transition: 0.3s
+}
+
+.painel button:hover:after {
+	border-top-color: #393939;
+}
+
 .painel li {
 	display: inline-block;
 	vertical-align: top;
@@ -157,6 +205,14 @@ header {
 	font-size: 14px;
 	text-align: center;
 	text-decoration: none;
+}
+
+.painel-compacto li:nth-child(n+7) {
+	display: none;
+}
+
+.painel-compacto button {
+	display: block;
 }
 
 .novidades {

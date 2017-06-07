@@ -19,3 +19,19 @@ function trocaBanner() {
 }
 
 setInterval(trocaBanner, 4000);
+
+//botão "mostrar mais" novidades
+
+$('.novidades').addClass('painel-compacto');
+
+$('.novidades button').click(function() {
+	$('.novidades').removeClass('painel-compacto');
+});
+
+//botão "mostrar mais" Mais vendidos
+
+$('.mais-vendidos').addClass('painel-compacto');
+
+$('.mais-vendidos button').click(function() {
+	$('.mais-vendidos').removeClass('painel-compacto');
+});
