@@ -1,5 +1,9 @@
+@escuro: #333333;
+
+
+
 body {
-	color: #333333;
+	color: @escuro;
 	font-family: "PT Sans", sans-serif;
 }
 
@@ -85,7 +89,7 @@ header {
 }
 
 .menu-departamentos a {
-	color: #333333;
+	color: @escuro;
 	text-decoration: none;
 }
 
@@ -123,6 +127,42 @@ header {
 	width: 445px;
 	border-radius: 4px;
 	box-shadow: 1px 1px 4px #999;
+
+	li {
+	display: inline-block;
+	vertical-align: top;
+	width: 140px;
+	margin: 2px;
+	padding-bottom: 10px;
+	-webkit-transition: 0.7s;
+			transition: 0.7s;
+
+		&:hover {
+			background-color: rgba(255,255,255,0.8);
+			box-shadow: 0 0 5px #333;
+	        -webkit-transition: box-shadow 0.7s;
+			transition: box-shadow 0.7s;
+	        -webkit-transform: scale(1.2) rotate(-5deg);
+			transform: scale(1.2) rotate(-5deg);
+		}
+	}
+
+	h2 {
+		font-family: 'Bad Script', sans-serif;
+		font-size: 24px;
+		font-weight: bold;
+		text-transform: uppercase;
+		margin-bottom: 10px;
+		text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+	}
+
+	a {
+		color: #333;
+		font-size: 14px;
+		text-align: center;
+		text-decoration: none;
+	}
+
 }
 
 .painel button {
@@ -171,41 +211,6 @@ header {
 
 .painel button:hover:after {
 	border-top-color: #393939;
-}
-
-.painel li {
-	display: inline-block;
-	vertical-align: top;
-	width: 140px;
-	margin: 2px;
-	padding-bottom: 10px;
-	-webkit-transition: 0.7s;
-			transition: 0.7s;
-}
-
-.painel li:hover {
-	background-color: rgba(255,255,255,0.8);
-	box-shadow: 0 0 5px #333;
-	-webkit-transition: box-shadow 0.7s;
-			transition: box-shadow 0.7s;
-	-webkit-transform: scale(1.2) rotate(-5deg);
-			transform: scale(1.2) rotate(-5deg);
-}
-
-.painel h2 {
-	font-family: 'Bad Script', sans-serif;
-	font-size: 24px;
-	font-weight: bold;
-	text-transform: uppercase;
-	margin-bottom: 10px;
-	text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
-}
-
-.painel a {
-	color: #333;
-	font-size: 14px;
-	text-align: center;
-	text-decoration: none;
 }
 
 .painel-compacto li:nth-child(n+7) {

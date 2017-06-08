@@ -4,8 +4,9 @@
 	<title>US Sports</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" href='http://fonts.googleapis.com/css?family=PT+Sans|Bad+Script'>
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet/less" href="less/style.less">
 	<link rel="stylesheet" href="css/mobile.css" media=" (max-width: 939px) ">
 </head>
 <body>
@@ -49,7 +50,7 @@
 			<h2>Novidades</h2>
 			<ol>
 				<?php
-					$conexao = mysqli_connect("127.0.0.1", "root", "abc123", "ussportsbd");
+					$conexao = mysqli_connect("mysql-ussports.jelasticlw.com.br", "root", "abc123", "ussportsbd");
 					$dados = mysqli_query($conexao, "select * from produtos LIMIT 0, 12");
 
 					while ($produto = mysqli_fetch_array($dados)):
@@ -102,5 +103,6 @@
 
 	<script src="js/jquery.js"></script>
 	<script src="js/home.js"></script>
+	<script src="js/less.js"></script>
 </body>
 </html>
