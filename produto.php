@@ -2,7 +2,8 @@
 <html lang="pt-br">
 
 	<?php
-		$conexao = mysqli_connect("127.0.0.1", "root", "abc123", "ussportsbd");
+		$conexao = mysqli_connect("node133812-ussports.jelasticlw.com.br", "root", "MKVins96637", "USSPORTSBD");
+		//$conexao = mysqli_connect("127.0.0.1", "root", "abc123", "USSPORTSBD");
 		$dados = mysqli_query($conexao, "SELECT * FROM produtos WHERE id = $_GET[id]");
 		$produto = mysqli_fetch_array($dados);
 	?>

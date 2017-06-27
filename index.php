@@ -50,7 +50,8 @@
 			<h2>Novidades</h2>
 			<ol>
 				<?php
-					$conexao = mysqli_connect("mysql-ussports.jelasticlw.com.br", "root", "abc123", "ussportsbd");
+					$conexao = mysqli_connect("node133812-ussports.jelasticlw.com.br", "root", "MKVins96637", "USSPORTSBD");
+					//$conexao = mysqli_connect("127.0.0.1", "root", "abc123", "USSPORTSBD");
 					$dados = mysqli_query($conexao, "select * from produtos LIMIT 0, 12");
 
 					while ($produto = mysqli_fetch_array($dados)):
@@ -76,7 +77,8 @@
 			<h2>Mais Vendidos</h2>
 			<ol>
 				<?php
-					$conexao = mysqli_connect("127.0.0.1", "root", "abc123", "ussportsbd");
+					$conexao = mysqli_connect("node133812-ussports.jelasticlw.com.br", "root", "MKVins96637", "USSPORTSBD");
+					//$conexao = mysqli_connect("127.0.0.1", "root", "abc123", "USSPORTSBD");
 					$dados = mysqli_query($conexao, "select * from produtos order by id DESC LIMIT 0, 12");
 
 					while ($produto = mysqli_fetch_array($dados)):
