@@ -50,7 +50,8 @@
 			<h2>Novidades</h2>
 			<ol>
 				<?php
-					$conexao = mysqli_connect("node133812-ussports.jelasticlw.com.br", "root", "MKVins96637", "USSPORTSBD");
+					$conexao = mysqli_connect("192.185.176.98", "usspo651", "0831RsmgkW", "usspo651_USSPORTSBD");
+					//$conexao = mysqli_connect("node133812-ussports.jelasticlw.com.br", "root", "MKVins96637", "USSPORTSBD");
 					//$conexao = mysqli_connect("127.0.0.1", "root", "abc123", "USSPORTSBD");
 					$dados = mysqli_query($conexao, "select * from produtos LIMIT 0, 12");
 
@@ -77,7 +78,8 @@
 			<h2>Mais Vendidos</h2>
 			<ol>
 				<?php
-					$conexao = mysqli_connect("node133812-ussports.jelasticlw.com.br", "root", "MKVins96637", "USSPORTSBD");
+					$conexao = mysqli_connect("192.185.176.98", "usspo651", "0831RsmgkW", "usspo651_USSPORTSBD");
+					//$conexao = mysqli_connect("node133812-ussports.jelasticlw.com.br", "root", "MKVins96637", "USSPORTSBD");
 					//$conexao = mysqli_connect("127.0.0.1", "root", "abc123", "USSPORTSBD");
 					$dados = mysqli_query($conexao, "select * from produtos order by id DESC LIMIT 0, 12");
 
