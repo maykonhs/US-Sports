@@ -3,10 +3,15 @@
 }
 
 header h1 {
-	text-align: center;
+	text-align: left;
 }
 
 header h1 img {
+	max-width: 50%;
+}
+
+footer img {
+	max-height: 50%;
 	max-width: 50%;
 }
 
